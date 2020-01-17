@@ -21,8 +21,8 @@ bool usage() {
 	fprintf(stderr, "usage: lcdClock [-d] [-a 00-FF] [-p 0-40] [-f n] [-s speed] [-m motd]\n");
 	fprintf(stderr, "a = hexadecimal i2c address ($gpio i2cd)\n");
 	fprintf(stderr, "f = clock format\n");
-	fprintf(stderr, "    1 - Weekday Month Date HH24:SS\n");
-	fprintf(stderr, "    2 - Weekday Date  HH:SS AM/PM\n");
+	fprintf(stderr, "    1 - Weekday Month Date HH24:MM\n");
+	fprintf(stderr, "    2 - Weekday Date  HH:MM AM/PM\n");
 
 	return false;
 }
