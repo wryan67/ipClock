@@ -3,27 +3,9 @@
  * Date:2018/12/27
  * Compiling :gcc -Wall name.c -lwiringPi -lwiringPiDev
  */
-#include <wiringPi.h>
-#include <pcf8574.h>
-#include <lcd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
-#include <ctype.h>
-#include <errno.h>
-#include <unistd.h>
-#include <pthread.h>
-#include <sys/types.h>
-
-#include <chrono>
-#include <ctime>  
-
-#include "./tools/include/threads.h"
-#include "./tools/include/pcf8574io.h"
-#include "./tools/include/lcd.h"
-
  // Global Variables
+#include "main.h"
+
 static unsigned int lcdAddress;
 static int          tries = 5;
 static char         dateFormat = '1';
@@ -50,7 +32,6 @@ bool usage() {
 
 
 bool setup() {
-	printf("Program initialization\n");
 
 	if (int ret = wiringPiSetup()) {
 		fprintf(stderr, "Wiring Pi setup failed, ret=%d\n", ret);
@@ -199,6 +180,7 @@ int main(int argc, char **argv)
 	}
 
 
+	printf("Press ^c to exit IP Clock\n");
 
 	while (1) {
 		updateClock();
