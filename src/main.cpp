@@ -19,7 +19,6 @@ char msg[1024];
 
 bool usage() {
 	fprintf(stderr, "usage: lcdClock [-d] [-a 00-FF] [-p 0-40] [-f n] [-s speed] [-m motd]\n");
-	fprintf(stderr, "d = daemon mode\n");
 	fprintf(stderr, "a = hexadecimal i2c address ($gpio i2cd)\n");
 	fprintf(stderr, "f = clock format\n");
 	fprintf(stderr, "    1 - Weekday Month Date HH24:SS\n");
