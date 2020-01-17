@@ -81,7 +81,7 @@ ${DIR_BIN}/%.o : $(DIR_Config)/%.c
 
 
 install: all
-	@echo Installing to /usr/local/bin
+	@echo Installing $(EXECUTABLE) to /usr/local/bin
 	@sudo cp $(EXECUTABLE) /usr/local/bin
 
 clean:
